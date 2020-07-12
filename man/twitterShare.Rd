@@ -18,11 +18,13 @@ twitterShare(
 
 \item{hashtags}{the end of the tweet separated by commas}
 
-\item{url}{a valid url to be shared}
+\item{url}{a valid url to be shared on twitter}
 }
 \description{
 Creates the Shiny server module for twitter using moduleServer
 }
 \examples{
-\dontrun{twitterShare("TwitterShare")}
+\dontrun{
+twitterShare("TwitterShare")
+}
 }

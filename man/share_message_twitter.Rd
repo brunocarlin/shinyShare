@@ -9,7 +9,7 @@ share_message_twitter(text, url, hashtags)
 \arguments{
 \item{text}{a string which will begin the tweet}
 
-\item{url}{a valid url to be shared}
+\item{url}{a valid url to be shared on twitter}
 
 \item{hashtags}{the end of the tweet separated by commas}
 }
@@ -20,5 +20,5 @@ a string with the concatenation of the arguments plus the required skeleton.
 Creates the twitter message to be shared
 }
 \examples{
-share_message_twitter(text = "see", url = "how","it works")
+share_message_twitter(text = "see", url = "how", "it works")
 }
