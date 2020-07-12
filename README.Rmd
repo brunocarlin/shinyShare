@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 [![R build status](https://github.com/brunocarlin/shinyShare/workflows/R-CMD-check/badge.svg)](https://github.com/brunocarlin/shinyShare/actions)
 <!-- badges: end -->
 
-The goal of shinyShare is to ...
+The goal of shinyShare is to create buttons to share your shiny apps
 
 ## Installation
 
@@ -40,7 +40,7 @@ devtools::install_github("brunocarlin/shinyShare")
 
 This is a basic shiny app using the package to create a twitter share button
 
-```{r eval=FALSE}
+```{r eval=FALSE, include=TRUE}
 library(shinyShare)
 
 body <- dashboardBody(

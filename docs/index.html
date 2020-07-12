@@ -66,7 +66,68 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-provides modules to sharing shiny apps.
+<div id="shinyshare" class="section level1">
+<div class="page-header"><h1 class="hasAnchor">
+<a href="#shinyshare" class="anchor"></a>shinyShare</h1></div>
+<!-- badges: start -->
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>[<span class="op">!</span>[R build status](https<span class="op">:</span><span class="er">//</span>github.com<span class="op">/</span>brunocarlin<span class="op">/</span>shinyShare<span class="op">/</span>workflows<span class="op">/</span>R<span class="op">-</span>CMD<span class="op">-</span>check<span class="op">/</span>badge.svg)](https<span class="op">:</span><span class="er">//</span>github.com<span class="op">/</span>brunocarlin<span class="op">/</span>shinyShare<span class="op">/</span>actions)</span></code></pre></div>
+
+<p>The goal of shinyShare is to …</p>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>You can install the released version of shinyShare from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
+<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"shinyShare"</span>)</pre></div>
+<p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
+<div class="sourceCode" id="cb3"><pre class="r"><span class="co"># install.packages("devtools")</span>
+<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"brunocarlin/shinyShare"</span>)</pre></div>
+</div>
+<div id="example" class="section level2">
+<h2 class="hasAnchor">
+<a href="#example" class="anchor"></a>Example</h2>
+<p>This is a basic shiny app using the package to create a twitter share button</p>
+<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">shinyShare</span>)
+
+<span class="no">body</span> <span class="kw">&lt;-</span> <span class="fu">dashboardBody</span>(
+  <span class="fu"><a href="https://rdrr.io/r/graphics/box.html">box</a></span>(
+    <span class="kw">title</span> <span class="kw">=</span> <span class="st">"Social Buttons"</span>,
+    <span class="kw">status</span> <span class="kw">=</span> <span class="kw">NULL</span>,
+    <span class="fu"><a href="reference/twitterShareUI.html">twitterShareUI</a></span>(<span class="st">"twitterShareText"</span>,<span class="kw">inline</span> <span class="kw">=</span> <span class="fl">FALSE</span>),
+    <span class="fu"><a href="reference/twitterShareUI.html">twitterShareUI</a></span>(<span class="st">"twitterShareUrl"</span>,<span class="kw">container</span> <span class="kw">=</span> <span class="no">tags</span>$<span class="no">li</span>, <span class="kw">class</span> <span class="kw">=</span> <span class="st">"custom-li-output"</span>),
+  ),
+  <span class="fu"><a href="reference/twitterShareUI.html">twitterShareUI</a></span>(<span class="st">"twitterShareHashtags"</span>)
+)
+
+
+<span class="no">ui</span> <span class="kw">=</span> <span class="fu">dashboardPage</span>(<span class="kw">header</span> <span class="kw">=</span> <span class="fu">dashboardHeader</span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"Social"</span>),
+                   <span class="kw">sidebar</span> <span class="kw">=</span> <span class="fu">dashboardSidebar</span>(),
+                   <span class="kw">body</span> <span class="kw">=</span> <span class="no">body</span>)
+
+<span class="no">server</span> <span class="kw">&lt;-</span> <span class="kw">function</span>(<span class="no">input</span>, <span class="no">output</span>,<span class="no">session</span>) {
+  <span class="co"># </span>
+  <span class="co"># http://twitter.com/share?text=text goes here&amp;url=http://url goes here&amp;hashtags=hashtag1,hashtag2,hashtag3</span>
+  <span class="co"># </span>
+
+  <span class="no">url_shiny</span> <span class="kw">&lt;-</span> <span class="fu">reactive</span>({
+    <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(
+      <span class="no">session</span>$<span class="no">clientData</span>$<span class="no">url_protocol</span>,
+      <span class="no">session</span>$<span class="no">clientData</span>$<span class="no">url_hostname</span>,
+      <span class="no">session</span>$<span class="no">clientData</span>$<span class="no">url_pathname</span>,
+      <span class="no">session</span>$<span class="no">clientData</span>$<span class="no">url_port</span>,
+      <span class="no">session</span>$<span class="no">clientData</span>$<span class="no">url_search</span>
+    )
+  })
+
+
+  <span class="fu"><a href="reference/twitterShare.html">twitterShare</a></span>(<span class="st">"twitterShareText"</span>,<span class="kw">text</span> <span class="kw">=</span> <span class="st">"test"</span>)
+  <span class="fu"><a href="reference/twitterShare.html">twitterShare</a></span>(<span class="st">"twitterShareUrl"</span>,<span class="kw">url</span> <span class="kw">=</span> <span class="st">"test"</span>)
+  <span class="fu"><a href="reference/twitterShare.html">twitterShare</a></span>(<span class="st">"twitterShareHashtags"</span>,<span class="kw">hashtags</span> <span class="kw">=</span> <span class="st">"test"</span>)
+
+}
+
+<span class="fu">shinyApp</span>(<span class="kw">ui</span> <span class="kw">=</span> <span class="no">ui</span>,<span class="kw">server</span> <span class="kw">=</span> <span class="no">server</span>)</pre></div>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -89,16 +150,22 @@ provides modules to sharing shiny apps.
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>First Last <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Bruno Carlin <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/brunocarlin/shinyShare/actions"><img src="https://github.com/brunocarlin/shinyShare/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by First Last.</p>
+  <p>Developed by Bruno Carlin.</p>
 </div>
 
 <div class="pkgdown">

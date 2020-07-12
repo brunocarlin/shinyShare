@@ -2,10 +2,10 @@ Package: shinyShare
 Title: provides modules to sharing shiny apps
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Bruno",
+           family = "Carlin",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "brunotestaguzza@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: provides modules to sharing shiny apps.
 License: MIT + file LICENSE
