@@ -1,30 +1,22 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
 
 # shinyShare
 
 <!-- badges: start -->
+
     [![R build status](https://github.com/brunocarlin/shinyShare/workflows/R-CMD-check/badge.svg)](https://github.com/brunocarlin/shinyShare/actions)
-[![R build status](https://github.com/brunocarlin/shinyShare/workflows/R-CMD-check/badge.svg)](https://github.com/brunocarlin/shinyShare/actions)
+
+[![R build
+status](https://github.com/brunocarlin/shinyShare/workflows/R-CMD-check/badge.svg)](https://github.com/brunocarlin/shinyShare/actions)
 <!-- badges: end -->
 
-The goal of shinyShare is to create buttons to share your shiny apps
+The goal of shinyShare is to …
 
 ## Installation
 
-You can install the released version of shinyShare from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of shinyShare from
+[CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("shinyShare")
@@ -36,11 +28,13 @@ And the development version from [GitHub](https://github.com/) with:
 # install.packages("devtools")
 devtools::install_github("brunocarlin/shinyShare")
 ```
+
 ## Example
 
-This is a basic shiny app using the package to create a twitter share button
+This is a basic shiny app using the package to create a twitter share
+button
 
-```{r eval=FALSE, include=TRUE}
+``` r
 library(shinyShare)
 
 body <- dashboardBody(
@@ -82,4 +76,3 @@ server <- function(input, output,session) {
 
 shinyApp(ui = ui,server = server)
 ```
-

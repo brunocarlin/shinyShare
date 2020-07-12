@@ -14,7 +14,7 @@ share_message_twitter(text, url, hashtags)
 \item{hashtags}{the end of the tweet separated by commas}
 }
 \value{
-a string with the concatenation of the arguments plus the required skeleton
+a string with the concatenation of the arguments plus the required skeleton.
 }
 \description{
 Creates the twitter message to be shared

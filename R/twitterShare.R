@@ -3,7 +3,9 @@
 #' @param id The module id must match the Server
 #' @inherit shiny::uiOutput
 #' @examples
-#' \dontrun{twitterShareUI("TwitterShare")}
+#' \dontrun{
+#' twitterShareUI("TwitterShare")
+#' }
 #' @import shiny
 #'
 twitterShareUI <- function(id, inline = TRUE, container = if (inline) span else div, ...) {
@@ -22,7 +24,9 @@ twitterShareUI <- function(id, inline = TRUE, container = if (inline) span else 
 #' @import shinydashboardPlus
 #'
 #' @examples
-#' \dontrun{twitterShare("TwitterShare")}
+#' \dontrun{
+#' twitterShare("TwitterShare")
+#' }
 twitterShare <- function(id,
                          text = "This is my shiny app!",
                          hashtags = "rstats,r",
