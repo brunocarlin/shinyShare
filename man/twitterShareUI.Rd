@@ -30,5 +30,7 @@ contain HTML content which should not be escaped.
 side. It is currently just an alias for \code{htmlOutput}.
 }
 \examples{
-\dontrun{twitterShareUI("TwitterShare")}
+\dontrun{
+twitterShareUI("TwitterShare")
+}
 }
