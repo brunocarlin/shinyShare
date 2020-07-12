@@ -16,7 +16,6 @@ knitr::opts_chunk$set(
 # shinyShare
 
 <!-- badges: start -->
-    [![R build status](https://github.com/brunocarlin/shinyShare/workflows/R-CMD-check/badge.svg)](https://github.com/brunocarlin/shinyShare/actions)
 [![R build status](https://github.com/brunocarlin/shinyShare/workflows/R-CMD-check/badge.svg)](https://github.com/brunocarlin/shinyShare/actions)
 <!-- badges: end -->
 
