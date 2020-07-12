@@ -4,7 +4,7 @@
 #' @param url a valid url to be shared
 #' @param hashtags the end of the tweet separated by commas
 #'
-#' @return a string with the concatenation of the arguments plus the required skeleton
+#' @return a string with the concatenation of the arguments plus the required skeleton.
 #' @export
 #'
 #' @examples share_message_twitter(text = "see", url = "how","it works")
