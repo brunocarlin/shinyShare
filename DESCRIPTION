@@ -1,5 +1,5 @@
 Package: shinyShare
-Title: What the Package Does (One Line, Title Case)
+Title: provides modules to sharing shiny apps
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "First",
