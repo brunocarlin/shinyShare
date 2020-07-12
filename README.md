@@ -5,13 +5,11 @@
 
 <!-- badges: start -->
 
-    [![R build status](https://github.com/brunocarlin/shinyShare/workflows/R-CMD-check/badge.svg)](https://github.com/brunocarlin/shinyShare/actions)
-
 [![R build
 status](https://github.com/brunocarlin/shinyShare/workflows/R-CMD-check/badge.svg)](https://github.com/brunocarlin/shinyShare/actions)
 <!-- badges: end -->
 
-The goal of shinyShare is to …
+The goal of shinyShare is to create buttons to share your shiny apps
 
 ## Installation
 
