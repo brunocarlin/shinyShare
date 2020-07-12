@@ -7,12 +7,15 @@
 #' @return a string with the concatenation of the arguments plus the required skeleton.
 #' @export
 #'
-#' @examples share_message_twitter(text = "see", url = "how","it works")
-share_message_twitter <- function(text, url,hashtags) {
-  text <- paste0("https://twitter.com/intent/tweet?text=",
-                 utils::URLencode(paste0(text,"\n")),
-                 "&url=",
-                 utils::URLencode(paste0(url,"\n")),
-                 "&hashtags=",
-                 utils::URLencode(hashtags))
+#' @examples
+#' share_message_twitter(text = "see", url = "how", "it works")
+share_message_twitter <- function(text, url, hashtags) {
+  text <- paste0(
+    "https://twitter.com/intent/tweet?text=",
+    utils::URLencode(paste0(text, "\n")),
+    "&url=",
+    utils::URLencode(paste0(url, "\n")),
+    "&hashtags=",
+    utils::URLencode(hashtags)
+  )
 }
