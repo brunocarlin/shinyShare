@@ -1,7 +1,7 @@
 #' Creates the twitter message to be shared
 #'
 #' @param text a string which will begin the tweet
-#' @param url a valid url to be shared
+#' @param url a valid url to be shared on twitter
 #' @param hashtags the end of the tweet separated by commas
 #'
 #' @return a string with the concatenation of the arguments plus the required skeleton.
