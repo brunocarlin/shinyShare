@@ -20,4 +20,5 @@ Imports:
     shiny,
     shinydashboard,
     shinydashboardPlus,
-    utils
+    utils,
+    glue
