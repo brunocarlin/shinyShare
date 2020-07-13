@@ -2,10 +2,24 @@
 % Please edit documentation in R/Share.R
 \name{Share}
 \alias{Share}
-\title{Creates the Shiny server module for socual networks using moduleServer}
+\title{Creates the Shiny server module for social media using moduleServer}
 \usage{
 Share(id, text = "This is my shiny app!", hashtags = "rstats,r", url = NULL)
 }
+\arguments{
+\item{id}{The module id must match the UI}
+
+\item{text}{a string which will begin the share text}
+
+\item{hashtags}{the end of the text separated by commas}
+
+\item{url}{a valid url to be shared on social media}
+}
 \description{
-Creates the Shiny server module for socual networks using moduleServer
+Creates the Shiny server module for social media using moduleServer
+}
+\examples{
+\dontrun{
+Share("Share")
+}
 }

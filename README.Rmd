@@ -37,7 +37,7 @@ devtools::install_github("brunocarlin/shinyShare")
 ```
 ## Example
 
-This is a basic shiny app showcasing the twitterShare and Share functions
+This is a basic shiny app showcasing the functions
 
 ```{r eval=FALSE, include=TRUE}
 library(shinyShare)
@@ -49,6 +49,7 @@ body <- dashboardBody(
     twitterShareUI("twitterShareText",inline = FALSE),
     twitterShareUI("twitterShareHashtags"),
     twitterShareUI("twitterShareUrl",container = tags$li, class = "custom-li-output"),
+    LinkedInShareUI("linkedIn")
   ),
   ShareUI("share_outside",container = tags$li, class = "custom-li-output"),
   box(ShareUI("share_inside"))
@@ -64,6 +65,7 @@ server <- function(input, output,session) {
   twitterShare("twitterShareText",text = "test")
   twitterShare("twitterShareUrl",url = "test")
   twitterShare("twitterShareHashtags",hashtags = "test")
+  LinkedInShare("linkedIn")
   Share("share_outside")
   Share("share_inside")
 }
