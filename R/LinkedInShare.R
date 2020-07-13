@@ -40,6 +40,7 @@ LinkedInShare <- function(id,
         url_shiny <- reactive(
           paste0(
             session$clientData$url_protocol,
+            "//",
             session$clientData$url_hostname,
             session$clientData$url_pathname,
             session$clientData$url_port,
