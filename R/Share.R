@@ -2,6 +2,7 @@
 #'
 #' @inherit twitterShareUI
 #'
+#' @export
 #' @examples
 #' \dontrun{
 #' ShareUI("Share")
@@ -23,6 +24,7 @@ ShareUI <- function(id, inline = TRUE, container = if (inline) span else div, ..
 #' @param url a valid url to be shared on social media
 #' @param hashtags the end of the text separated by commas
 #'
+#' @export
 #' @examples
 #' \dontrun{
 #' Share("Share")

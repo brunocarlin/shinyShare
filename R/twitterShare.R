@@ -1,6 +1,7 @@
 #' Creates the Shiny UI for twitter using uiOutput
 #'
 #' @param id The module id must match the Server
+#' @export
 #' @inherit shiny::uiOutput
 #' @examples
 #' \dontrun{

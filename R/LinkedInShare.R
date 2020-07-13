@@ -2,11 +2,12 @@
 #'
 #' @param id The module id must match the Server
 #' @inherit shiny::uiOutput
+#' @export
+#'
 #' @examples
 #' \dontrun{
 #' LinkedInShareUI("LinkedInShare")
 #' }
-#' @import shiny
 #'
 LinkedInShareUI <- function(id, inline = TRUE, container = if (inline) span else div, ...) {
   ns <- NS(id)
