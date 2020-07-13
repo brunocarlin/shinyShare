@@ -33,4 +33,5 @@ side. It is currently just an alias for \code{htmlOutput}.
 \dontrun{
 LinkedInShareUI("LinkedInShare")
 }
+
 }

@@ -40,6 +40,9 @@ devtools::install_github("brunocarlin/shinyShare")
 This is a basic shiny app showcasing the functions
 
 ```{r eval=FALSE, include=TRUE}
+library(shiny)
+library(shinydashboard)
+library(shinydashboardPlus)
 library(shinyShare)
 
 body <- dashboardBody(
