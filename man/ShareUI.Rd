@@ -4,10 +4,18 @@
 \alias{ShareUI}
 \title{Creates the Shiny UI for social networks using uiOutput}
 \usage{
-ShareUI(id, inline = TRUE, container = if (inline) span else div, ...)
+ShareUI(
+  id,
+  social_media = c("twitter", "linkedIn"),
+  inline = TRUE,
+  container = if (inline) span else div,
+  ...
+)
 }
 \arguments{
 \item{id}{The module id must match the Server}
+
+\item{social_media}{decides which social media buttons to include}
 
 \item{inline}{use an inline (\code{span()}) or block container (\code{div()})
 for the output}
