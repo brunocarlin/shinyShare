@@ -54,8 +54,8 @@ body <- dashboardBody(
     twitterShareUI("twitterShareUrl",container = tags$li, class = "custom-li-output"),
     LinkedInShareUI("linkedIn")
   ),
-  ShareUI("share_outside",container = tags$li, class = "custom-li-output"),
-  box(ShareUI("share_inside"))
+  ShareUI("share_outside",social_media = c("linkedIn"),container = tags$li, class = "custom-li-output"),
+  box(ShareUI("share_inside",social_media = "twitter"))
 )
 
 

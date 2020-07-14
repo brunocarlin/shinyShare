@@ -2,17 +2,20 @@
 #'
 #' @inherit twitterShareUI
 #'
+#' @param social_media decides which social media buttons to include
 #' @export
 #' @examples
 #' \dontrun{
 #' ShareUI("Share")
 #' }
-ShareUI <- function(id, inline = TRUE, container = if (inline) span else div, ...) {
+ShareUI <- function(id,social_media = c("twitter","linkedIn"),inline = TRUE, container = if (inline) span else div, ...) {
   ns <- NS(id)
-  tagList(
-    twitterShareUI(ns("twitter"),inline = inline,container = container,... = ...),
-    LinkedInShareUI(ns("linkedIn"),inline = inline,container = container,... = ...)
+  list_tag <- list(
+    twitter = twitterShareUI(ns("twitter"),inline = inline,container = container,... = ...),
+    linkedIn = LinkedInShareUI(ns("linkedIn"),inline = inline,container = container,... = ...)
   )
+
+  do.call(tagList, list_tag[social_media])
 
 }
 
