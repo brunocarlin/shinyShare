@@ -7,13 +7,26 @@ name: pkgdown
 
 jobs:
   pkgdown:
-    runs-on: macOS-latest
+    runs-on: ${{ matrix.config.os }}
+
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: ubuntu-16.04, r: 'release', rspm: "https://packagemanager.rstudio.com/cran/__linux__/xenial/latest"}
+
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      RSPM: ${{ matrix.config.rspm }}
+
     steps:
       - uses: actions/checkout@v2
 
       - uses: r-lib/actions/setup-r@master
+        with:
+          r-version: ${{ matrix.config.r }}
 
       - uses: r-lib/actions/setup-pandoc@master
 
@@ -25,17 +38,25 @@ jobs:
         shell: Rscript {0}
 
       - name: Cache R packages
+        if: runner.os != 'Windows'
         uses: actions/cache@v1
         with:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
+      - name: Install system dependencies
+        if: runner.os == 'Linux'
+        env:
+          RHUB_PLATFORM: linux-x86_64-ubuntu-gcc
+        run: |
+          Rscript -e "remotes::install_github('r-hub/sysreqs')"
+          sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
+          sudo -s eval "$sysreqs"
+
       - name: Install dependencies
         run: |
-          install.packages("remotes")
           remotes::install_deps(dependencies = TRUE)
-          remotes::install_dev("pkgdown")
         shell: Rscript {0}
 
       - name: Install package
