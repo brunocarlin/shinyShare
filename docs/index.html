@@ -70,23 +70,22 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#shinyshare" class="anchor"></a>shinyShare</h1></div>
 <!-- badges: start -->
-<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>[<span class="op">!</span>[R build status](https<span class="op">:</span><span class="er">//</span>github.com<span class="op">/</span>brunocarlin<span class="op">/</span>shinyShare<span class="op">/</span>workflows<span class="op">/</span>R<span class="op">-</span>CMD<span class="op">-</span>check<span class="op">/</span>badge.svg)](https<span class="op">:</span><span class="er">//</span>github.com<span class="op">/</span>brunocarlin<span class="op">/</span>shinyShare<span class="op">/</span>actions)</span></code></pre></div>
 
-<p>The goal of shinyShare is to …</p>
+<p>The goal of shinyShare is to create buttons to share your shiny apps</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the released version of shinyShare from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"shinyShare"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"shinyShare"</span>)</pre></div>
 <p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="co"># install.packages("devtools")</span>
+<div class="sourceCode" id="cb2"><pre class="r"><span class="co"># install.packages("devtools")</span>
 <span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"brunocarlin/shinyShare"</span>)</pre></div>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>This is a basic shiny app using the package to create a twitter share button</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">shinyShare</span>)
+<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">shinyShare</span>)
 
 <span class="no">body</span> <span class="kw">&lt;-</span> <span class="fu">dashboardBody</span>(
   <span class="fu"><a href="https://rdrr.io/r/graphics/box.html">box</a></span>(
