@@ -41,7 +41,7 @@ twitterShare <- function(id,
       if (is.null(url_server)) {
         message_twitter <- reactive({
           share_message_twitter(
-            text =   text,
+            text =  text,
             url = get_url(),
             hashtags = hashtags
           )
