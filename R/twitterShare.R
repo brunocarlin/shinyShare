@@ -39,21 +39,10 @@ twitterShare <- function(id,
              session,
              url_server = url) {
       if (is.null(url_server)) {
-        url_shiny <- reactive(
-          paste0(
-            session$clientData$url_protocol,
-            "//",
-            session$clientData$url_hostname,
-            session$clientData$url_pathname,
-            session$clientData$url_port,
-            session$clientData$url_search
-          )
-        )
-
         message_twitter <- reactive({
           share_message_twitter(
             text = text,
-            url = url_shiny(),
+            url = get_url(),
             hashtags = hashtags
           )
         })
