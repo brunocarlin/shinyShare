@@ -10,6 +10,6 @@
 share_message_linkedin <- function(url) {
   paste0(
     "https://www.linkedin.com/sharing/share-offsite/?url=",
-    "&url=",utils::URLencode(paste0(url, "\n"))
+    "&url=", utils::URLencode(paste0(url, "\n"))
   )
 }

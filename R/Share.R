@@ -8,15 +8,14 @@
 #' \dontrun{
 #' ShareUI("Share")
 #' }
-ShareUI <- function(id,social_media = c("twitter","linkedIn"),inline = TRUE, container = if (inline) span else div, ...) {
+ShareUI <- function(id, social_media = c("twitter", "linkedIn"), inline = TRUE, container = if (inline) span else div, ...) {
   ns <- NS(id)
   list_tag <- list(
-    twitter = twitterShareUI(ns("twitter"),inline = inline,container = container,... = ...),
-    linkedIn = LinkedInShareUI(ns("linkedIn"),inline = inline,container = container,... = ...)
+    twitter = twitterShareUI(ns("twitter"), inline = inline, container = container, ... = ...),
+    linkedIn = LinkedInShareUI(ns("linkedIn"), inline = inline, container = container, ... = ...)
   )
 
   do.call(tagList, list_tag[social_media])
-
 }
 
 
@@ -33,22 +32,21 @@ ShareUI <- function(id,social_media = c("twitter","linkedIn"),inline = TRUE, con
 #' Share("Share")
 #' }
 Share <- function(id,
-                         text = "This is my shiny app!",
-                         hashtags = "rstats,r",
-                         url = NULL) {
+                  text = "This is my shiny app!",
+                  hashtags = "rstats,r",
+                  url = NULL) {
   moduleServer(
     id,
     function(input,
              output,
              session,
              url_server = url) {
-     if (is.null(url_server)) {
-       url_server <- get_url()
-     }
+      if (is.null(url_server)) {
+        url_server <- get_url()
+      }
 
-     twitterShare("twitter",text = text,hashtags = hashtags,url = url_server)
-     LinkedInShare("linkedIn",url = url_server)
+      twitterShare("twitter", text = text, hashtags = hashtags, url = url_server)
+      LinkedInShare("linkedIn", url = url_server)
     }
-
   )
 }

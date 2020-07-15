@@ -12,7 +12,7 @@
 twitterShareUI <- function(id, inline = TRUE, container = if (inline) span else div, ...) {
   ns <- NS(id)
 
-  uiOutput(ns("twitterShare"), inline = inline, container =   container, ... = ...)
+  uiOutput(ns("twitterShare"), inline = inline, container = container, ... = ...)
 }
 
 #' Creates the Shiny server module for twitter using moduleServer
@@ -41,7 +41,7 @@ twitterShare <- function(id,
       if (is.null(url_server)) {
         message_twitter <- reactive({
           share_message_twitter(
-            text =  text,
+            text = text,
             url = get_url(),
             hashtags = hashtags
           )

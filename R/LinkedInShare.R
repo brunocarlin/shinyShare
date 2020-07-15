@@ -29,7 +29,7 @@ LinkedInShareUI <- function(id, inline = TRUE, container = if (inline) span else
 #' LinkedInShare("LinkedInShare")
 #' }
 LinkedInShare <- function(id,
-                         url = NULL) {
+                          url = NULL) {
   moduleServer(
     id,
     function(input,
@@ -37,7 +37,6 @@ LinkedInShare <- function(id,
              session,
              url_server = url) {
       if (is.null(url_server)) {
-
         message_linkedin <- reactive({
           share_message_linkedin(
             url = get_url()
