@@ -42,6 +42,10 @@ Share <- function(id,
              output,
              session,
              url_server = url) {
+     if (is.null(url_server)) {
+       url_server <- get_url()
+     }
+
      twitterShare("twitter",text = text,hashtags = hashtags,url = url_server)
      LinkedInShare("linkedIn",url = url_server)
     }
