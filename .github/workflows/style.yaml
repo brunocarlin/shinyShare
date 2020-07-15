@@ -19,6 +19,11 @@ jobs:
       - uses: r-lib/actions/setup-r@master
       - name: Install dependencies
         run: Rscript -e 'install.packages("styler")'
+      - name: Establish git credentials
+        run: |
+          install.packages("usethis")
+          usethis::use_git_config(user.name = "brunocarlin", user.email = "brunotestaguzza@gmail.com")
+        shell: Rscript {0}
       - name: Style
         run: Rscript -e 'styler::style_pkg()'
       - name: commit
